@@ -49,9 +49,19 @@ export const NavBar = () => {
                   exact
                   activeClassName="active"
                   className="nav-link"
-                  to="/login"
+                  to="/categorias"
                 >
                   Categorias
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  exact
+                  activeClassName="active"
+                  className="nav-link"
+                  to="/libros"
+                >
+                  Libros
                 </NavLink>
               </li>
             </ul>

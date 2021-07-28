@@ -23,6 +23,7 @@ const deletePerson = (id) => {
     return request.then((response) => response)
 }
 
+
 export default {
     getAllPersons,
     createPerson,

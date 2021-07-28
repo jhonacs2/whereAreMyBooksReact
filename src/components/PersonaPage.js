@@ -6,7 +6,8 @@ import contactPerson from "../services/persons";
 import { Notification } from "./Notification";
 
 export const PersonaPage = () => {
-  const { persons, setPersons, setNoti, noti } = useContext(LibraryContext);
+  const { persons, setPersons, setNoti, noti,libros } =
+    useContext(LibraryContext);
   const [{ nombre, apellido, alias, email }, handleInputChange, reset] =
     useForm({
       nombre: "",
@@ -52,7 +53,7 @@ export const PersonaPage = () => {
   };
 
   const deletePerson = (id) => {
-    const result = window.confirm("Do you want to delete person ?");
+    const result = window.confirm("Quieres eliminar la Persona seleccionada ?");
     if (result) {
       contactPerson
         .deletePerson(id)
@@ -72,6 +73,8 @@ export const PersonaPage = () => {
       }, 4000);
     }
   };
+
+ 
 
   return (
     <div>
@@ -156,6 +159,7 @@ export const PersonaPage = () => {
               persons={persons}
               setNoti={setNoti}
               deletePerson={() => deletePerson(person.id)}
+              libros = {libros}
             />
           ))}
           <div className="container"></div>
